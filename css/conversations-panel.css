@@ -1,0 +1,74 @@
+#conversations-panel {
+  position: fixed;
+  width: 30%;
+  height: 100%;
+  float: left;
+  border-right: 1px solid #333; }
+  #conversations-panel .options {
+    border-bottom: 1px solid #333;
+    padding: 5px;
+    position: relative;
+    height: 60px; }
+    #conversations-panel .options input {
+      width: 100%;
+      border: 0;
+      height: 50px;
+      padding-left: 10px;
+      padding-right: 35px;
+      color: #333; }
+    #conversations-panel .options .new-conversation {
+      position: absolute;
+      display: flex;
+      top: 5px;
+      right: 5px;
+      height: 50px;
+      width: 25px;
+      background: none;
+      text-align: center; }
+      #conversations-panel .options .new-conversation .fa {
+        margin: auto; }
+  #conversations-panel .conversation {
+    border-bottom: 1px solid #333;
+    padding: 10px;
+    float: none;
+    position: relative;
+    transition: .5s; }
+    #conversations-panel .conversation:hover, #conversations-panel .conversation.selected {
+      background-color: rgba(96, 202, 145, 0.4);
+      transition: .5s; }
+      #conversations-panel .conversation:hover .triangle, #conversations-panel .conversation.selected .triangle {
+        border-color: transparent transparent transparent #333;
+        transition: .5s; }
+    #conversations-panel .conversation a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      color: #333;
+      height: 50px; }
+      #conversations-panel .conversation a:hover {
+        text-decoration: none; }
+    #conversations-panel .conversation img {
+      height: 50px;
+      width: 50px;
+      float: left;
+      margin-right: 10px; }
+    #conversations-panel .conversation .title {
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: top; }
+    #conversations-panel .conversation .members {
+      display: inline;
+      word-break: keep-all;
+      font-size: .7em; }
+    #conversations-panel .conversation .triangle {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent transparent;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateX(10px) translateY(-50%); }
+
+/*# sourceMappingURL=conversations-panel.css.map */

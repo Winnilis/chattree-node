@@ -1,0 +1,98 @@
+#header {
+  float: left;
+  border-bottom: 1px solid #333;
+  height: 60px;
+  width: 70%;
+  position: relative;
+  overflow: hidden; }
+  #header .title {
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 110px;
+    padding-left: 10px;
+    position: absolute;
+    top: 10px;
+    font-size: 1.4em; }
+    #header .title i {
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 999; }
+  #header .user {
+    border-left: 1px solid #333;
+    width: 60px;
+    height: 60px;
+    float: right;
+    position: relative;
+    z-index: 999; }
+    #header .user img {
+      height: 60px;
+      width: 60px;
+      cursor: pointer; }
+  #header .fa {
+    margin: auto 5px; }
+
+.header-popup {
+  border: 1px solid #333;
+  position: absolute;
+  top: 70px;
+  right: 5px;
+  width: 200px;
+  font-size: .85 em;
+  background-color: #FFF; }
+  .header-popup .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #333 transparent;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    transform: translateY(-10px); }
+  .header-popup ul {
+    margin: 0;
+    padding: 5px 0;
+    list-style: none; }
+    .header-popup ul li {
+      padding: 5px 10px; }
+      .header-popup ul li a {
+        color: #333; }
+        .header-popup ul li a:hover {
+          text-decoration: none; }
+    .header-popup ul .fa {
+      margin-right: 5px; }
+      .header-popup ul .fa:hover {
+        color: #333; }
+  .header-popup hr {
+    margin: 7px auto;
+    width: 75%; }
+  .header-popup .fixed-data {
+    padding: 5px 0;
+    text-align: center; }
+    .header-popup .fixed-data .name {
+      font-weight: bold; }
+    .header-popup .fixed-data .login {
+      font-style: italic; }
+  .header-popup .action li:hover {
+    background-color: rgba(96, 202, 145, 0.4);
+    cursor: pointer; }
+  .header-popup .action .italic {
+    font-style: italic; }
+
+.members-list {
+  right: 60px;
+  padding-top: 10px;
+  text-align: center; }
+  .members-list .number {
+    padding: 10px; }
+  .members-list ul {
+    text-align: left; }
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/516e342ab8.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/login.js"></script>
+    <title>Chat Tree | Connexion</title>
+</head>
+
+<body>
+
+<div class="login">
+    <fieldset>
+        <div class="logmod">
+            <div id="logo-container">
+                <div id="logo">
+                    <img src="./img/fake-banner.png" alt="banner"/>
+                </div>
+            </div>
+            <div class="logmod__wrapper">
+                <div class="logmod__container">
+                    <ul class="logmod__tabs">
+                        <li id="login-tab-link" class="tab-link" data-tabtar="lgm-2"><a href="#">Connexion</a></li>
+                        <li id="signup-tab-link" class="tab-link" data-tabtar="lgm-1"><a href="#">Inscription</a></li>
+                    </ul>
+                    <div class="logmod__tab-wrapper">
+
+                        <!-- SIGNUP -->
+                        <div class="logmod__tab lgm-1">
+                            <div id="signup-tab">
+                                <div class="logmod__form">
+                                    <form id="signup-form" accept-charset="utf-8" action="/api/new_account"
+                                          class="simform">
+                                        <fieldset>
+
+                                            <div class="input">
+                                                <input id="signup-form-email" type="email" placeholder="Email"
+                                                       required/>
+                                                <span><i class="fa fa-envelope-o"></i></span>
+                                                <span id="signup-form-email-error"
+                                                      class="error">Email déjà utilisé</span>
+                                            </div>
+
+                                            <div class="input">
+                                                <input id="signup-form-password" type="password"
+                                                       placeholder="Mot de passe" required/>
+                                                <span><i class="fa fa-lock"></i></span>
+                                            </div>
+
+                                            <div class="input">
+                                                <input id="signup-form-confirmation" type="password"
+                                                       placeholder="Confirmation" required/>
+                                                <span><i class="fa fa-lock"></i></span>
+                                                <span id="signup-form-confirmation-error" class="error">Le mot de passe et sa confirmation doivent être identiques</span>
+                                            </div>
+
+                                            <button id="submit-signup" type="submit" class="submit">
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </button>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LOGIN -->
+                        <div class="logmod__tab lgm-2">
+                            <div id="login-tab">
+                                <div class="logmod__form">
+                                    <form id="login-form" accept-charset="utf-8" action="/api/login" class="simform">
+                                        <fieldset>
+                                            <div class="input">
+                                                <input id="login-form-user" type="text"
+                                                       placeholder="Email ou nom d'utilisateur" required/>
+                                                <span><i class="fa fa-envelope-o"></i></span>
+                                                <span id="login-form-user-error"
+                                                      class="error">Aucun compte trouvé</span>
+                                            </div>
+
+                                            <div class="input">
+                                                <input id="login-form-password" type="password"
+                                                       placeholder="Mot de passe" required/>
+                                                <span><i class="fa fa-lock"></i></span>
+                                                <span id="login-form-password-error" class="error">Mot de passe incorrect</span>
+                                            </div>
+
+                                            <div id="forgotten-password" class="input">
+                                                <a href="#/forgotten-password">Mot de passe oublié ?</a>
+                                            </div>
+
+                                            <button id="submit-connection" type="submit" class="submit">
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </button>
+                                            <footer></footer>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+</body>
+
+</html>

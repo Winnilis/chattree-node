@@ -1,0 +1,527 @@
+@import "bourbon/bourbon";
+@import 'var';
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+* {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: #CCC repeat fixed;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+}
+
+.login {
+  position: relative;
+  top: 50%;
+  width: 250px;
+  display: table;
+  margin: -150px auto 0;
+  background: #fff;
+  border-radius: 4px; }
+
+.legend {
+  position: relative;
+  width: 100%;
+  display: block;
+  background: #FF7052;
+  padding: 15px;
+  color: #fff;
+  font-size: 20px; }
+
+.input {
+  position: relative;
+  width: 90%;
+  margin: 15px auto;
+}
+  .input span {
+    position: absolute;
+    color: $font-color;
+    display: block;
+    bottom:100%;
+    top: 7px;
+    left: 3px;
+    padding-top: -5px;
+
+    i {
+      display: block;
+      width: 24px;
+      height: 23px;
+      text-align: right;
+      position: absolute;
+      top: 3px;
+    }
+  }
+  .input input {
+    width: 100%;
+    padding: 10px 5px 10px 40px;
+    display: block;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    transition: 0.2s ease-out;
+    color: #a1a1a1;
+  }
+    .input input:focus {
+      // padding: 10px 5px 10px 10px;
+      outline: 0;
+      border-color: #FF7052;
+    }
+
+.submit {
+  width: 45px;
+  height: 45px;
+  display: block;
+  margin: 0 auto -15px;
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #FF7052;
+  color: #FF7052;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 0 0 7px #fff;
+  transition: 0.2s ease-out; }
+  .submit:focus, .submit:hover {
+    background: #FF7052;
+    color: #fff;
+    outline: 0; }
+
+.feedback {
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background: #2ecc71;
+  padding: 10px 0;
+  font-size: 12px;
+  display: none;
+  opacity: 0; }
+  .feedback:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(46, 204, 113, 0);
+    border-bottom-color: #2ecc71;
+    border-width: 10px;
+    margin-left: -10px; }
+
+/*# sourceMappingURL=form.css.map */
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+.logmod {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  background: $logmod-bg;
+  z-index: $logmod-zindex;
+  @include clearfix();
+  // .logmod__wrapper
+  &__wrapper {
+    display: block;
+    background: #FFF;
+    position: relative;
+    max-width: 550px;
+    border-radius: 4px;
+    box-shadow: 0 0 18px rgba(#000, 0.2);
+    margin: ($logmod-baseline * 5) auto;
+  }
+  // .logmod__container
+  &__container {
+    overflow: hidden;
+    width: 100%;
+    @include clearfix;
+  }
+  // .logmod__tab
+  &__tab {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+
+    &-wrapper {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+
+    &.show {
+      opacity: 1;
+      height: 100%;
+      visibility: visible;
+    }
+  }
+  // .logmod__tabs
+  &__tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include clearfix;
+
+    li {
+      &.current {
+        a {
+          color: #333;
+        }
+      }
+
+      a {
+        width: 50%;
+        position: relative;
+        float: left;
+        text-align: center;
+        background: #FFF;
+        line-height: $logmod-baseline * 3;
+        height: $logmod-baseline * 3;
+        text-decoration: none;
+        color: #809191;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+  }
+  // .logmod__heading
+  &__heading {
+    text-align: center;
+    padding: ($logmod-baseline / 2) 0 ($logmod-baseline / 2) 0;
+    // .logmod__heading-subtitle
+    &-subtitle {
+      display: block;
+      font-weight: 400;
+      font-size: 15px;
+      color: #888;
+      line-height: $logmod-baseline * 2;
+    }
+  }
+}
+// [classname] [background-color] [color]
+$items: facebook #3b5998 #FFF, googleplus #dd4b39 #FFF;
+
+.connect {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: $logmod-baseline * 3;
+  line-height: $logmod-baseline * 3;
+  text-decoration: none;
+  @include clearfix;
+
+  &:focus,
+  &:hover,
+  &:visited {
+    color: #FFF;
+    text-decoration: none;
+  }
+  // .connect__icon
+  &__icon {
+    vertical-align: middle;
+    float: left;
+    width: 70px;
+    text-align: center;
+    font-size: 22px;
+  }
+  // .connect__context
+  &__context {
+    vertical-align: middle;
+    text-align: center;
+  }
+  @each $item in $items {
+    &.#{nth($item, 1)} {
+      background: nth($item, 2);
+      color: nth($item, 3);
+
+      a {
+        color: nth($item, 3);
+      }
+
+      .connect__icon {
+        background: darken(nth($item, 2), 13%);
+      }
+    }
+  }
+}
+
+.simform {
+  position: relative;
+  // .simform__actions
+  &__actions {
+    padding: 15px;
+    font-size: 14px;
+    @include clearfix;
+
+    .sumbit {
+      height: $logmod-baseline * 2;
+      float: right;
+      color: #FFF;
+      width: 50%;
+      font-weight: 700;
+      font-size: 16px;
+      background: $green;
+      @include clearfix;
+      // @extend .btn;
+      margin-top: 7px;
+    }
+    // .simform__actions-sidetext
+    &-sidetext {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      padding: 0 10px;
+      margin: 9px 0 0;
+      color: #8C979E;
+      text-align: center;
+      line-height: $logmod-baseline;
+      @include clearfix;
+    }
+  }
+}
+
+.sminputs {
+  border-bottom: 1px solid #E5E5E5;
+  // @include clearfix;
+
+  .input {
+    display: block;
+    position: relative;
+    width: 50%;
+    // height: ($logmod-baseline * 3) - 1;
+    // padding: 11px $logmod-baseline;
+    //padding: ($logmod-baseline / 2) 15px 0 ($logmod-baseline / 1.5);
+    border-right: 1px solid #e5e5e5;
+    border-bottom: none;
+    float: left;
+    background-color: #FFF;
+    border-radius: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &.active {
+      background: #eee;
+
+      .hide-password {
+        background: #eee;
+      }
+    }
+
+    &.full {
+      width: 100%;
+    }
+  }
+
+}
+
+
+
+//CUSTOM ----------------------------------------------------------------------
+$connexion-grey: #333;
+$signup-grey: #888;
+
+#logo-container{
+  margin-top: 100px;
+  text-align: center;
+
+  #logo {
+    display: inline-block;
+    left:0;
+    right: 0;
+    border:10px solid #000;
+  }
+}
+
+.logmod__wrapper {
+  margin-top: 100px;
+}
+
+#signup-tab {
+  background-color: $main-color-light;
+}
+
+#signup-tab-link {
+  a {
+    background-color: $main-color-light;
+    color: $connexion-grey;
+  }
+}
+
+#login-tab-link a{
+  color: $connexion-grey;
+}
+
+.logmod__container,
+.logmod__form,
+.logmod__tab,
+.logmod__tab-wrapper{
+  overflow: visible;
+  border-radius: 0 !important;
+}
+
+.logmod__wrapper{
+  border-radius: 0;
+}
+
+.input {
+  margin-top: 20px;
+
+  .fa{
+    color: $connexion-grey;
+  }
+
+  input {
+    border: 0;
+    border-radius: 0;
+    color: $font-color;
+    padding-left: 50px;
+  }
+
+  input::-webkit-input-placeholder {
+    color: $border-color-light;
+    font-style: italic;
+  }
+
+  input:-moz-placeholder { /* Firefox 18- */
+    color: $border-color-light;
+    font-style: italic;
+  }
+
+  input::-moz-placeholder {  /* Firefox 19+ */
+    color: $border-color-light;
+    font-style: italic;
+  }
+
+  input:-ms-input-placeholder {
+    color: $border-color-light;
+    font-style: italic;
+  }
+}
+
+.fa-lock {
+  top: 4px !important;
+  left: 0px !important;
+}
+
+footer {
+  height:44px;
+}
+
+#login-tab {
+  .input input {
+    border-bottom: 1px solid #CCC;
+  }
+
+  a {
+    display: inline-block;
+    padding-top: 5px;
+    color: $main-color;
+    text-decoration: none;
+    position: relative;
+    top:8px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  #submit-connection {
+    border:1px solid $main-color-light;
+    color: $main-color-light;
+    position:absolute;
+    left:46%;
+    bottom:-8px;
+    width: 50px;
+    height: 50px;
+
+    &:hover,
+    &:focus{
+      background-color: $main-color-light;
+      color: #FFF;
+    }
+  }
+}
+
+#signup-tab {
+  #submit-signup{
+    color: #FFF;
+    background-color: $main-color-light;
+    border-color: #FFF;
+    box-shadow: 0 0 0 7px $main-color-light;
+    position: relative;
+    top:5px;
+    height:50px;
+    width:50px;
+
+    &:hover{
+      background-color: #FFF;
+      color: $main-color-light;
+    }
+  }
+
+  .input input {
+    background-color: transparent;
+  }
+
+  .input input {
+    border-bottom: 1px solid $connexion-grey;
+  }
+
+  input::-webkit-input-placeholder {
+    color: $connexion-grey;
+  }
+
+  input:-moz-placeholder { /* Firefox 18- */
+    color: $connexion-grey;
+  }
+
+  input::-moz-placeholder {  /* Firefox 19+ */
+    color: $connexion-grey;
+  }
+
+  input:-ms-input-placeholder {
+    color: $connexion-grey;
+  }
+}
+
+.input .error{
+  font-size: .7em;
+  position: absolute;
+  top: 3.2em;
+  color:$error;
+  visibility: hidden;
+}

@@ -1,0 +1,45 @@
+@import 'var';
+
+html,body {
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+}
+
+#backHome {
+  text-decoration: none !important;
+   h1 {
+     text-decoration: none !important;
+   }
+}
+
+input:focus,
+button:focus{
+  outline: 0;
+}
+
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: $border-color-light;
+    font-style: italic;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: $border-color-light;
+    font-style: italic;
+}
+
+input.placeholder, textarea.placeholder {
+    color: $border-color-light;
+    font-style: italic;
+}
+
+.fa {
+  font-size: 17px;
+  &:hover {
+    color: $font-color-light;
+    cursor: pointer;
+  }
+}

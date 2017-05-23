@@ -1,0 +1,38 @@
+#footer {
+  height: 50px;
+  padding: 10px;
+  bottom: 0;
+  position: fixed;
+  width: 70%;
+  border-top: 1px solid #333; }
+  #footer input {
+    height: 100%;
+    width: 100%;
+    padding-right: 85px;
+    border: none; }
+  #footer .more {
+    border-left: 1px solid black;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    right: 0;
+    display: flex;
+    transition: .5s; }
+    #footer .more:hover {
+      cursor: pointer;
+      background-color: rgba(96, 202, 145, 0.4);
+      transition: .5s; }
+      #footer .more:hover .fa {
+        color: #333; }
+    #footer .more .fa {
+      margin: auto; }
+  #footer .send-message {
+    float: right;
+    margin-right: 55px;
+    position: relative;
+    bottom: 50%;
+    transform: translateY(-50%);
+    font-size: 2em; }
+
+/*# sourceMappingURL=footer.css.map */

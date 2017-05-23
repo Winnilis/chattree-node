@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="mainApp" ng-controller="mainController">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script> -->
+    <!-- <script src="https://use.fontawesome.com/516e342ab8.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <script src="./lib/jquery/jquery-3.2.1.min.js"></script>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/angular/angular-route.min.js"></script>
+    <link href="./lib/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="./lib/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+    <script src="./lib/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="./lib/fontawesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+
+    <!-- LOAD MAIN APP -->
+    <script src="../js/app.js"></script>
+    <!-- CONTROLLERS -->
+    <script src="../js/controllers/mainController.js"></script>
+    <script src="../js/controllers/homeController.js"></script>
+    <script src="../js/controllers/conversationsController.js"></script>
+    <!-- ROUTES -->
+    <script src="../front-routes.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/conversations-panel.css">
+    <link rel="stylesheet" href="../css/content-panel.css">
+    <link rel="stylesheet" href="../css/main-container.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <title ng-bind="title">Chat Tree</title>
+</head>
+
+<body ng-controller="homeController">
+  <!-- LEFT PANEL WITH ALL CONVERASTIONS -->
+<div id="conversations-panel" ng-controller="conversationsController">
+  <div class="options">
+    <input type="text" name="search" placeholder="Rechercher"/>
+    <div class="new-conversation" ng-click="newConversation()">
+      <i class="fa fa-user-plus"></i>
+    </div>
+  </div>
+  <div class="conversation" ng-repeat="c in conversations" ng-class="{selected: $first}">
+    <a href="conversation/{{c._id}}">
+      <img src="{{'img/conversations/' + c._id + '.jpg'}}" alt="img-conversation">
+      <span class="title" ng-if="c.title">{{c.title}}</span>
+      <br ng-if="c.title"/>
+      <p class="members">
+        <span class="member" ng-repeat="m in c.members">
+          <span ng-if="!$last">{{contacts[m].surname}} {{contacts[m].name}},</span>
+          <span ng-if="$last">{{contacts[m].surname}} {{contacts[m].name}}</span>
+        </span>
+      </p>
+    </a>
+    <div class="triangle"></div>
+  </div>
+</div>
+<!-- HEADER -->
+<div id="content-panel">
+  <div id="header">
+    <div class="user">
+      <img src="img/users/{{user.pp}}" alt="profile-picture"  ng-click="showUserInformation = !showUserInformation;">
+    </div>
+    <div class="title">
+      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempus velit leo, sed elementum sapien ultricies et. In vestibulum tincidunt.</span>
+      <i class="fa fa-users" ng-click="showMembersList = !showMembersList"></i>
+    </div>
+  </div>
+  <div class="members-list header-popup" ng-show="showMembersList">
+    <div class="triangle"></div>
+    <span class="number"><strong>2</strong> participants</span>
+    <hr>
+    <ul class="action">
+      <li><a href="#">Ronald Weasley    <br/><span class="italic">@Wiwi</span></a></li>
+      <li><a href="#">Hermione Granger  <br/><span class="italic">@JeSaisTout</span></a></li>
+    </ul>
+  </div>
+  <div class="user-information header-popup" ng-show="showUserInformation">
+    <div class="triangle"></div>
+    <ul class="fixed-data">
+      <li class="name">{{user.surname}} {{user.name}}</li>
+      <li class="login">@{{user.login}}</li>
+    </ul>
+    <hr>
+    <ul class="action">
+      <li><a href="#"><i class="fa fa-pencil"></i>Modifier mon profil</a></li>
+      <li><a href="#"><i class="fa fa-cog"></i>Paramètres</a></li>
+      <li><a href="#"><i class="fa fa-sign-out"></i>Déconnexion</a></li>
+    </ul>
+  </div>
+
+  <!-- MAIN VIEW  -->
+  <div id="main-container">
+      <div ng-view></div>
+  </div>
+  <!-- FOOTER TO SEND MESSAGES -->
+  <div id="footer">
+    <input type="text" name="message-content" placeholder="Message ..."/>
+    <i class="fa fa-caret-right send-message" ng-click="sendMessage()"></i>
+    <div class="more" ng-click="addMore()">
+      <i class="fa fa-plus"></i>
+    </div>
+  </div>
+</div>
+</body>
+</html>
